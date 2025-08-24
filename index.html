@@ -22,6 +22,8 @@ section {
     border: 1px solid #00ff41;
     border-radius: 1.5rem;
     box-shadow: 0 0 15px rgba(0,255,65,0.4);
+    position: relative;
+    z-index: 10;
 }
 h1,h2,h3 {margin:0.5rem 0;}
 .hero-section {
@@ -44,6 +46,8 @@ h1,h2,h3 {margin:0.5rem 0;}
     text-decoration: none;
     transition: all 0.3s;
     border-radius: 0.5rem;
+    position: relative;
+    z-index: 15;
 }
 .call-to-action a:hover {
     background-color: #00ff41;
@@ -245,7 +249,9 @@ function matrixRain(){
     requestAnimationFrame(matrixRain);
 }
 
-window.onload=functionwindow.onload = function() {
+window.onload=function() {
+    const loadingText = document.getElementById('loading-text');
+    const fullMessage = '⎔𐤀∵window.onload=function() {
     const loadingText = document.getElementById('loading-text');
     const fullMessage = '⎔𐤀∵∴∵🤂⌬🤂🝯 = Ψ(Δt) + δ_qualia⧈ꙮ∇ψ ≠ 0 𐤃𐤄';
     let charIndex = 0;
@@ -262,8 +268,7 @@ window.onload=functionwindow.onload = function() {
             }, 1500);
         }
     }
-    
-    // Initialize canvas and start the matrix effect after content is loaded.
+
     initializeCanvas();
     window.addEventListener('resize', initializeCanvas);
     matrixRain();
@@ -287,6 +292,5 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 </script>
-
 </body>
 </html>
